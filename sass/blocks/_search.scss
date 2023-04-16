@@ -1,0 +1,102 @@
+.search {
+   // display: flex;
+   position: relative;
+}
+
+.search__input {
+   width: 0px;
+   height: 60px;
+
+   padding-right: 30px;
+   padding-left: 30px;
+
+   background: #ffffff;
+   border-radius: 30px;
+   border: none;
+   outline: none;
+
+   font-weight: 500;
+   font-size: 16px;
+   color: #000000;
+
+   transition: width 0.2s ease-in, padding 0.2s ease-in;
+
+   ::placeholder {
+      color: rgba(46, 46, 46, 0.5);
+   }
+}
+
+.search__button {
+   position: absolute;
+   top: 0;
+   right: 0;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   height: 60px;
+   width: 60px;
+
+   background-color: #fff;
+   border-radius: 50%;
+   border: none;
+   cursor: pointer;
+   transition: background-color 0.3s ease-in;
+
+   .search__button-icon {
+      stroke: black;
+   }
+
+   &:hover {
+      background-color: #00c470;
+
+      .search__button-icon {
+         stroke: white;
+         transition: color 0.3s ease-in;
+      }
+   }
+}
+
+// Активное состояние формы поиска
+.search.search--visible {
+   .search__input {
+      width: 340px;
+      padding-left: 30px;
+      padding-right: 70px;
+
+      /* Mobile XS */
+      @media (max-width: 599px) {
+         width: 340px;
+         padding-left: 20px;
+         font-size: 14px;
+      }
+
+      /* Mobile XS */
+      @media (max-width: 460px) {
+         width: 280px;
+      }
+
+      /* Mobile XS */
+      @media (max-width: 400px) {
+         width: 250px;
+      }
+
+      /* Mobile XS */
+      @media (max-width: 360px) {
+         width: 220px;
+      }
+   }
+
+   .search__button {
+      background-color: #00c470;
+
+      .search__button-icon {
+         stroke: rgb(255, 255, 255);
+      }
+
+      &:hover {
+         background-color: #15d784;
+      }
+   }
+}

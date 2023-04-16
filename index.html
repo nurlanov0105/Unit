@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<!-- encoding -->
+	<meta charset="UTF-8">
+	<!-- Mobile support -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Title and SEO -->
+	<title>Проект Юнит - таск менджер</title>
+	<meta name="description" content="таск менджер">
+	<meta name="keywords" content="ключевые слова, фразы">
+
+	<!-- Open Graph -->
+	<meta property="og:url" content="http://cg50063.tw1.ru/unit/index.html">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Юнит - таск менджер">
+	<meta property="og:description" content="Управляй задачами и проектами из любой точки вместе с ЮНИТ.">
+	<meta property="og:image" content="http://cg50063.tw1.ru/unit//img/opengraph.jpg">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="./img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="./img/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-config" content="./img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Fonts preload -->
+	<link rel="preload" href="./fonts/Montserrat/Montserrat-Bold.woff2" as="font" crossorigin="anonymous">
+	<link rel="preload" href="./fonts/Montserrat/Montserrat-ExtraBold.woff2" as="font" crossorigin="anonymous">
+	<link rel="preload" href="./fonts/Montserrat/Montserrat-Medium.woff2" as="font" crossorigin="anonymous">
+
+	<!-- Critical Header CSS for Lighthouse -->
+	<style>
+		.header::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(0, 0, 0, 0.35);
+		}
+
+		/* Reset and base styles  */
+		*,
+		*::before,
+		*::after {
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		html {
+			height: 100%;
+			/* sticky footer */
+			scroll-behavior: smooth;
+		}
+
+		body {
+			height: 100%;
+			/* sticky footer */
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			/* sticky footer */
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			/* sticky footer */
+			margin: 0;
+			font-family: 'Montserrat', sans-serif;
+			color: #2E2E2E;
+		}
+
+		body>* {
+			-ms-flex-negative: 0;
+			flex-shrink: 0;
+			/* sticky footer */
+		}
+
+		input,
+		textarea,
+		button {
+			font-family: inherit;
+			padding: 0;
+		}
+
+		label {
+			cursor: pointer;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p {
+			margin: 0;
+		}
+
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+
+		fieldset {
+			border: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		legend {
+			display: block;
+			margin: 0;
+			padding: 0;
+			border: none;
+		}
+
+		/* Grid styles */
+		.container {
+			width: 1200px;
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		/* Utility */
+		.none {
+			display: none !important;
+		}
+
+		.header {
+			position: relative;
+			z-index: 5;
+			background-image: url("./img/bg/header-03.jpg");
+			background-size: cover;
+			background-position: center;
+			/* Desktop MD */
+			/* Tablet */
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 1600px) {
+			.header {
+				background-image: url("./img/bg/header-bg-1600.jpg");
+				background-size: cover;
+				background-position: center;
+			}
+		}
+
+		@media (max-width: 1199px) {
+			.header {
+				background-image: url("./img/bg/header-bg-900.jpg");
+				background-size: cover;
+				background-position: center;
+			}
+		}
+
+		@media (max-width: 899px) {
+			.header {
+				background-image: url("./img/bg/header-bg-600.jpg");
+				background-size: cover;
+				background-position: center;
+			}
+		}
+
+		@media (max-width: 599px) {
+			.header {
+				background-image: url("./img/bg/header-bg-320.jpg");
+				background-size: cover;
+				background-position: center;
+			}
+		}
+
+		.header__wrapper {
+			position: relative;
+			z-index: 2;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			padding-top: 60px;
+			padding-bottom: 100px;
+			color: #fff;
+			/* Tablet */
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 1199px) {
+			.header__wrapper {
+				padding-bottom: 50px;
+			}
+		}
+
+		@media (max-width: 899px) {
+			.header__wrapper {
+				padding-top: 20px;
+			}
+		}
+
+		@media (max-width: 599px) {
+			.header__wrapper {
+				padding-bottom: 40px;
+			}
+		}
+
+		.header__buttons {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			width: 1200px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 0 15px;
+			margin-bottom: 140px;
+			/* Tablet */
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 1199px) {
+			.header__buttons {
+				width: 100%;
+				margin-bottom: 100px;
+			}
+		}
+
+		@media (max-width: 899px) {
+			.header__buttons {
+				margin-bottom: 30px;
+			}
+		}
+
+		.header__buttons-search {
+			margin-left: auto;
+		}
+
+		.header__buttons-nav-icon {
+			-ms-flex-negative: 0;
+			flex-shrink: 0;
+		}
+
+		.header__content {
+			margin-bottom: 148px;
+			text-align: center;
+			/* Tablet */
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 1199px) {
+			.header__content {
+				margin-bottom: 129px;
+			}
+		}
+
+		@media (max-width: 899px) {
+			.header__content {
+				margin-bottom: 80px;
+			}
+		}
+
+		@media (max-width: 599px) {
+			.header__content {
+				margin-bottom: 50px;
+			}
+		}
+
+		.header__title {
+			margin-bottom: 40px;
+			font-weight: 700;
+			font-size: 96px;
+			line-height: 1;
+			/* Tablet */
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 1199px) {
+			.header__title {
+				margin-bottom: 35px;
+				font-size: 84px;
+			}
+		}
+
+		@media (max-width: 899px) {
+			.header__title {
+				margin-bottom: 30px;
+				font-size: 70px;
+			}
+		}
+
+		.header__descr {
+			margin-bottom: 70px;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 730px;
+			font-weight: 700;
+			font-size: 20px;
+			/* Tablet */
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		.header__descr p+p {
+			margin-top: 15px;
+		}
+
+		@media (max-width: 1199px) {
+			.header__descr {
+				margin-bottom: 50px;
+				font-size: 18px;
+			}
+		}
+
+		@media (max-width: 899px) {
+			.header__descr {
+				font-size: 16px;
+				max-width: 430px;
+			}
+		}
+
+		@media (max-width: 599px) {
+			.header__descr {
+				margin-bottom: 30px;
+			}
+		}
+
+		.header__form {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-column-gap: 20px;
+			column-gap: 20px;
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 899px) {
+			.header__form {
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				-webkit-box-align: stretch;
+				-ms-flex-align: stretch;
+				align-items: stretch;
+				margin: 0 auto;
+				row-gap: 20px;
+				width: 370px;
+			}
+		}
+
+		@media (max-width: 599px) {
+			.header__form {
+				width: 100%;
+			}
+		}
+
+		.header__form-input {
+			width: 240px;
+			/* Mobile */
+		}
+
+		@media (max-width: 899px) {
+			.header__form-input {
+				width: 100%;
+			}
+		}
+
+		.section-functional {
+			padding: 80px 0;
+			/* Tablet */
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 1199px) {
+			.section-functional {
+				padding: 50px 0;
+			}
+		}
+
+		@media (max-width: 599px) {
+			.section-functional {
+				padding: 40px 0;
+			}
+		}
+
+		.section-functional__header {
+			text-align: center;
+			margin-bottom: 70px;
+			/* Tablet */
+			/* Mobile */
+		}
+
+		@media (max-width: 1199px) {
+			.section-functional__header {
+				margin-bottom: 60px;
+			}
+		}
+
+		@media (max-width: 899px) {
+			.section-functional__header {
+				margin-bottom: 40px;
+			}
+		}
+
+		.section-functional__title {
+			margin-bottom: 40px;
+			/* Tablet */
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 1199px) {
+			.section-functional__title {
+				margin-bottom: 30px;
+			}
+		}
+
+		@media (max-width: 899px) {
+			.section-functional__title {
+				margin-bottom: 20px;
+			}
+		}
+
+		@media (max-width: 599px) {
+			.section-functional__title {
+				margin-bottom: 10px;
+			}
+		}
+
+		.section-functional__row {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			-webkit-column-gap: 30px;
+			column-gap: 30px;
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 899px) {
+			.section-functional__row {
+				row-gap: 30px;
+			}
+		}
+
+		@media (max-width: 599px) {
+			.section-functional__row {
+				row-gap: 40px;
+			}
+		}
+
+		.section-functional__row>* {
+			-ms-flex-negative: 0;
+			flex-shrink: 0;
+			width: 270px;
+			/* Tablet */
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 1199px) {
+			.section-functional__row>* {
+				width: 195px;
+			}
+		}
+
+		@media (max-width: 899px) {
+			.section-functional__row>* {
+				width: 270px;
+			}
+		}
+
+		@media (max-width: 599px) {
+			.section-functional__row>* {
+				width: 290px;
+			}
+		}
+
+		.search {
+			position: relative;
+		}
+
+		.search__input {
+			width: 0px;
+			height: 60px;
+			padding-right: 30px;
+			padding-left: 30px;
+			background: #ffffff;
+			border-radius: 30px;
+			border: none;
+			outline: none;
+			font-weight: 500;
+			font-size: 16px;
+			color: #000000;
+			-webkit-transition: width 0.2s ease-in, padding 0.2s ease-in;
+			transition: width 0.2s ease-in, padding 0.2s ease-in;
+		}
+
+		.search__input ::-webkit-input-placeholder {
+			color: rgba(46, 46, 46, 0.5);
+		}
+
+		.search__input :-ms-input-placeholder {
+			color: rgba(46, 46, 46, 0.5);
+		}
+
+		.search__input ::-ms-input-placeholder {
+			color: rgba(46, 46, 46, 0.5);
+		}
+
+		.search__input ::placeholder {
+			color: rgba(46, 46, 46, 0.5);
+		}
+
+		.search__button {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			height: 60px;
+			width: 60px;
+			background-color: #fff;
+			border-radius: 50%;
+			border: none;
+			cursor: pointer;
+			-webkit-transition: background-color 0.3s ease-in;
+			transition: background-color 0.3s ease-in;
+		}
+
+		.search__button .search__button-icon {
+			stroke: black;
+		}
+
+		.search__button:hover {
+			background-color: #00c470;
+		}
+
+		.search__button:hover .search__button-icon {
+			stroke: white;
+			-webkit-transition: color 0.3s ease-in;
+			transition: color 0.3s ease-in;
+		}
+
+		.search.search--visible .search__input {
+			width: 340px;
+			padding-left: 30px;
+			padding-right: 70px;
+			/* Mobile XS */
+			/* Mobile XS */
+			/* Mobile XS */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 599px) {
+			.search.search--visible .search__input {
+				width: 340px;
+				padding-left: 20px;
+				font-size: 14px;
+			}
+		}
+
+		@media (max-width: 460px) {
+			.search.search--visible .search__input {
+				width: 280px;
+			}
+		}
+
+		@media (max-width: 400px) {
+			.search.search--visible .search__input {
+				width: 250px;
+			}
+		}
+
+		@media (max-width: 360px) {
+			.search.search--visible .search__input {
+				width: 220px;
+			}
+		}
+
+		.search.search--visible .search__button {
+			background-color: #00c470;
+		}
+
+		.search.search--visible .search__button .search__button-icon {
+			stroke: white;
+		}
+
+		.search.search--visible .search__button:hover {
+			background-color: #15d784;
+		}
+
+		.nav-icon {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			background-color: #fff;
+			border-radius: 50%;
+			border: none;
+			width: 60px;
+			height: 60px;
+			cursor: pointer;
+			-webkit-transition: background-color 0.3s ease-in;
+			transition: background-color 0.3s ease-in;
+		}
+
+		.nav-icon:hover {
+			background-color: #00c470;
+		}
+
+		.nav-icon:hover .nav-icon__middle,
+		.nav-icon:hover .nav-icon__middle::before,
+		.nav-icon:hover .nav-icon__middle::after {
+			background-color: #fff;
+		}
+
+		.nav-icon__middle {
+			position: relative;
+			width: 20px;
+			height: 3px;
+			background-color: #000000;
+			border-radius: 2px;
+			-webkit-transition: background-color 0.3s ease-in;
+			transition: background-color 0.3s ease-in;
+		}
+
+		.nav-icon__middle::before,
+		.nav-icon__middle::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: #000000;
+			border-radius: 5px;
+			-webkit-transition: top 0.2s linear 0.2s, background-color 0.3s ease-in, -webkit-transform 0.2s ease-in;
+			transition: top 0.2s linear 0.2s, background-color 0.3s ease-in, -webkit-transform 0.2s ease-in;
+			transition: transform 0.2s ease-in, top 0.2s linear 0.2s, background-color 0.3s ease-in;
+			transition: transform 0.2s ease-in, top 0.2s linear 0.2s, background-color 0.3s ease-in, -webkit-transform 0.2s ease-in;
+		}
+
+		.nav-icon__middle::before {
+			top: -7px;
+		}
+
+		.nav-icon__middle::after {
+			top: 7px;
+		}
+
+		.nav-icon.nav-icon--active {
+			position: fixed;
+			z-index: 3;
+			background-color: #fff;
+			-webkit-transition: background-color 0.3s ease-in;
+			transition: background-color 0.3s ease-in;
+		}
+
+		.nav-icon.nav-icon--active:hover {
+			background-color: #00c470;
+		}
+
+		.nav-icon.nav-icon--active:hover .nav-icon__middle::before,
+		.nav-icon.nav-icon--active:hover .nav-icon__middle::after {
+			background-color: #fff;
+		}
+
+		.nav-icon.nav-icon--active .nav-icon__middle {
+			background-color: transparent;
+		}
+
+		.nav-icon.nav-icon--active .nav-icon__middle::before,
+		.nav-icon.nav-icon--active .nav-icon__middle::after {
+			top: 0;
+			-webkit-transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
+			transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
+			transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+			transition: top 0.2s linear, transform 0.2s ease-in 0.2s, -webkit-transform 0.2s ease-in 0.2s;
+		}
+
+		.nav-icon.nav-icon--active .nav-icon__middle::before {
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+
+		.nav-icon.nav-icon--active .nav-icon__middle::after {
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+
+		.nav {
+			position: fixed;
+			top: -100%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.9);
+			opacity: 0;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			row-gap: 50px;
+			text-align: center;
+			-webkit-transition: opacity 0.2s ease-in, top 0s linear 0.2s;
+			transition: opacity 0.2s ease-in, top 0s linear 0.2s;
+			/* Mobile XS */
+		}
+
+		@media (max-width: 599px) {
+			.nav {
+				row-gap: 30px;
+			}
+		}
+
+		.nav.nav--active {
+			z-index: 2;
+			top: 0;
+			opacity: 1;
+			-webkit-transition: top 0s linear, opacity 0.2s ease-in;
+			transition: top 0s linear, opacity 0.2s ease-in;
+		}
+
+		.nav_top {
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 1;
+			letter-spacing: 4px;
+			text-transform: uppercase;
+			color: #15d784;
+			/* Mobile XS */
+		}
+
+		@media (max-width: 599px) {
+			.nav_top {
+				font-size: 16px;
+			}
+		}
+
+		.nav__list {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			row-gap: 40px;
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 1;
+			/* Mobile XS */
+		}
+
+		@media (max-width: 599px) {
+			.nav__list {
+				row-gap: 30px;
+				font-size: 16px;
+			}
+		}
+
+		.nav__list a {
+			margin: 0;
+			color: #ffffff;
+			text-decoration: none;
+			-webkit-transition: color 0.2s ease-in;
+			transition: color 0.2s ease-in;
+		}
+
+		.nav__list a:hover {
+			color: #15d784;
+		}
+
+		.input {
+			display: block;
+			height: 60px;
+			padding: 0 30px;
+			background-color: rgba(0, 0, 0, 0.75);
+			border-radius: 30px;
+			border: none;
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 60px;
+			color: #FFFFFF;
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 899px) {
+			.input {
+				padding: 0 46px;
+			}
+		}
+
+		@media (max-width: 599px) {
+			.input {
+				padding: 0 36px;
+			}
+		}
+
+		.input::-webkit-input-placeholder {
+			color: #FFFFFF;
+		}
+
+		.input:-ms-input-placeholder {
+			color: #FFFFFF;
+		}
+
+		.input::-ms-input-placeholder {
+			color: #FFFFFF;
+		}
+
+		.input::placeholder {
+			color: #FFFFFF;
+		}
+
+		.input:focus {
+			outline: none;
+			background: black;
+		}
+
+		.button {
+			display: inline-block;
+			height: 60px;
+			padding: 0 40px;
+			background-color: #00C470;
+			border-radius: 30px;
+			border: none;
+			font-weight: 800;
+			font-size: 14px;
+			line-height: 60px;
+			letter-spacing: 4px;
+			text-transform: uppercase;
+			color: #FFFFFF;
+			cursor: pointer;
+			-webkit-transition: background-color 0.3s ease-in;
+			transition: background-color 0.3s ease-in;
+		}
+
+		.button:hover {
+			background-color: #03a961;
+		}
+
+		.button:focus {
+			background-color: #009152;
+		}
+
+		.title {
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 1;
+			letter-spacing: 4px;
+			text-transform: uppercase;
+			color: #15D784;
+			/* Mobile */
+		}
+
+		@media (max-width: 899px) {
+			.title {
+				font-size: 14px;
+			}
+		}
+
+		.subtitle {
+			font-weight: 700;
+			font-size: 48px;
+			line-height: 1;
+			color: #2E2E2E;
+			/* Tablet */
+			/* Mobile */
+			/* Mobile XS */
+		}
+
+		@media (max-width: 1199px) {
+			.subtitle {
+				font-size: 38px;
+			}
+		}
+
+		@media (max-width: 899px) {
+			.subtitle {
+				font-size: 30px;
+			}
+		}
+
+		@media (max-width: 599px) {
+			.subtitle {
+				font-size: 26px;
+			}
+		}
+
+		.card {
+			display: block;
+			text-align: center;
+		}
+
+		.card__img {
+			margin-bottom: 40px;
+			margin-left: auto;
+			margin-right: auto;
+			/* Tablet */
+		}
+
+		@media (max-width: 1199px) {
+			.card__img {
+				margin-bottom: 20px;
+			}
+		}
+
+		.card__title {
+			margin-bottom: 20px;
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 1;
+			/* Tablet */
+			/* Mobile */
+		}
+
+		@media (max-width: 1199px) {
+			.card__title {
+				min-height: 48px;
+				margin-bottom: 10px;
+				line-height: 1.5;
+			}
+		}
+
+		@media (max-width: 899px) {
+			.card__title {
+				min-height: unset;
+			}
+		}
+
+		.card__descr {
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 2.14;
+			color: #808080;
+			/* Tablet */
+		}
+
+		@media (max-width: 1199px) {
+			.card__descr {
+				line-height: 1.57;
+			}
+		}
+
+		/*# sourceMappingURL=header.css.map */
+	</style>
+
+</head>
+
+<body>
+
+	<header class="header ">
+		<div class="header__wrapper">
+
+			<div class="header__buttons">
+				<button class="header__buttons-nav-icon nav-icon" aria-label="Navigation">
+					<span class="nav-icon__middle"></span>
+				</button>
+
+				<!-- Навигация -->
+				<nav class="nav">
+					<div class="nav_top">навигация по сайту</div>
+					<ul class="nav__list">
+						<li><a href="#functional">Функционал</a></li>
+						<li><a href="#tasks">Гибкое управление</a></li>
+						<li><a href="#focus">Всегда в фокусе</a></li>
+						<li><a href="#price">Цены</a></li>
+						<li><a href="#clients">Отзывы клиентов</a></li>
+					</ul>
+				</nav>
+
+				<form class="header__buttons-search search">
+					<input type="text" class="search__input" placeholder="Введите текст для поиска" required>
+					<button class="search__button" aria-label="Search">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g class="search__button-icon">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M7.70001 13.2C10.7376 13.2 13.2 10.7375 13.2 7.69995C13.2 4.66239 10.7376 2.19995 7.70001 2.19995C4.66245 2.19995 2.20001 4.66239 2.20001 7.69995C2.20001 10.7375 4.66245 13.2 7.70001 13.2Z"
+									stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M16.8 18.4L11.2 12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+							</g>
+						</svg>
+					</button>
+				</form>
+
+			</div>
+			<div class="container header__content">
+
+				<h1 class="header__title">ЮНИТ</h1>
+				<div class="header__descr">
+					<p>Управляй&nbsp;задачами&nbsp;и&nbsp;проектами из любой точки вместе с ЮНИТ.
+						Дома. На работе. В дороге. Онлайн. Оффлайн.</p>
+				</div>
+				<form class="header__form">
+					<input type="text" class="header__form-input input" placeholder="Ваше имя">
+					<input type="email" class="header__form-input input" placeholder="Email">
+					<button class="button" type="submit" aria-label="Start Trial">начать триал</button>
+				</form>
+
+			</div>
+			<div class="header__scroll">
+				<a href="#functional">
+					<img src="./img/header/mouse.svg" alt="Scroll down" width="32" height="48">
+				</a>
+			</div>
+
+		</div>
+	</header>
+
+	<section class="section-functional " id="functional">
+		<div class="container">
+
+			<header class="section-functional__header">
+				<h2 class="section-functional__title title">функционал</h2>
+				<h3 class="subtitle">Получайте больше</h3>
+			</header>
+
+			<div class="section-functional__row">
+
+				<!-- Card -->
+				<div class="card">
+					<img class="card__img" src="./img/functional/file.svg" alt="Создан для управления" width="64"
+						height="64">
+					<h4 class="card__title">Создан для управления</h4>
+					<p class="card__descr">Согласно ставшей уже классической работе Филипа Котлера, рекламная площадка
+						отталкивает рейтинг.</p>
+				</div>
+				<!-- // Card -->
+
+				<!-- Card -->
+				<div class="card">
+					<img class="card__img" src="./img/functional/microphone.svg" alt="Голосовое управление" width="64"
+						height="64">
+					<h4 class="card__title">Голосовое управление</h4>
+					<p class="card__descr">Согласно ставшей уже классической работе Филипа Котлера, рекламная площадка
+						отталкивает рейтинг.</p>
+				</div>
+				<!-- // Card -->
+
+				<!-- Card -->
+				<div class="card">
+					<img class="card__img" src="./img/functional/money.svg" alt="Контроль бюджета" width="64" height="64">
+					<h4 class="card__title">Контроль бюджета</h4>
+					<p class="card__descr">Согласно ставшей уже классической работе Филипа Котлера, рекламная площадка
+						отталкивает рейтинг.</p>
+				</div>
+				<!-- // Card -->
+
+				<!-- Card -->
+				<div class="card">
+					<img class="card__img" src="./img/functional/pie.svg" alt="Статистика и графики" width="64" height="64">
+					<h4 class="card__title">Статистика и графики</h4>
+					<p class="card__descr">Согласно ставшей уже классической работе Филипа Котлера, рекламная площадка
+						отталкивает рейтинг.</p>
+				</div>
+				<!-- // Card -->
+
+			</div>
+
+		</div>
+	</section>
+
+	<section class="section-cta ">
+		<div class="section-cta__content">
+			<div class="container">
+				<h2 class="section-cta__title">Начните использовать <span>ЮНИТ</span> уже сегодня.</h2>
+				<a href="#price" class="button">подключить</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-tasks" id="tasks">
+		<div class="container">
+
+			<div class="section-tasks__row">
+
+				<div class="section-tasks__content">
+
+					<header class="section-tasks__header">
+						<h2 class="section-tasks__title title">гибкое управление</h2>
+						<h3 class="subtitle">Задачи и подзадачи</h3>
+					</header>
+
+					<div class="section-tasks__text">
+						<p>Тактика выстраивания отношений с коммерчекими агентами, вопреки мнению П.Друкера, искажает
+							продвигаемый отраслевой стандарт. Стратегический рыночный план традиционно масштабирует комплексный
+							имидж. Спонсорство развивает формат события.</p>
+					</div>
+
+				</div>
+
+				<div class="section-tasks__img">
+					<picture>
+						<source srcset="./img/devices/iphone.webp" type="image/webp" width="356" height="602">
+						<img src="./img/devices/iphone.jpg" alt="iphone" width="356" height="602">
+					</picture>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="section-focus" id="focus">
+		<div class="container">
+			<div class="section-focus__row">
+
+				<div class="section-focus__img">
+					<picture>
+						<source srcset="./img/devices/ipad.webp" type="image/webp" width="570" height="454">
+						<img src="./img/devices/ipad.jpg" alt="ipad" width="570" height="454">
+					</picture>
+				</div>
+
+				<div class="section-focus__content">
+
+					<header class="section-focus__header">
+						<h2 class="section-focus__title title">всегда в фокусе</h2>
+						<h3 class="subtitle">Множественные приоритеты</h3>
+					</header>
+
+					<div class="section-focus__text">
+						<p>Потребление существенно продуцирует рыночный традиционный канал. В соответствии с законом Ципфа,
+							маркетинг основан на тщательном анализе данных. Наряду с этим, целевой трафик конкурентоспособен.
+						</p>
+					</div>
+
+
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section class="section-price " id="price">
+		<div class="section-price__content">
+			<div class="container">
+
+				<header class="section-price__header">
+					<h2 class="section-price__title title">цены</h2>
+					<h3 class="subtitle">Выберите подходящий план</h3>
+				</header>
+
+				<div class="section-price__row">
+
+					<!-- Package -->
+					<div class="package">
+
+						<div class="package__header">
+							<h4 class="package__title">базовый</h4>
+							<span class="package__price">15</span>
+							<span class="package__period">$/мес</span>
+						</div>
+
+						<ul class="package__list">
+							<li class="package__list-item">10 проектов</li>
+							<li class="package__list-item">5 участников</li>
+							<li class="package__list-item">∞ количество задач</li>
+							<li class="package__list-item">5 GB медиа хранилище </li>
+							<li class="package__list-item">Поддержка по Email</li>
+						</ul>
+
+						<div class="package__button">
+							<button class="button-outline" aria-label="choose-option">выбрать</button>
+						</div>
+
+					</div>
+					<!-- // Package -->
+					<!-- Package -->
+					<div class="package package--special">
+
+						<div class="package__header">
+							<h4 class="package__title">стандарт</h4>
+							<span class="package__price">65</span>
+							<span class="package__period">$/мес</span>
+						</div>
+
+						<ul class="package__list">
+							<li class="package__list-item">50 проектов</li>
+							<li class="package__list-item">10 участников</li>
+							<li class="package__list-item">∞ количество задач</li>
+							<li class="package__list-item">25 GB медиа хранилище</li>
+							<li class="package__list-item">Поддержка по Email</li>
+						</ul>
+
+						<div class="package__button">
+							<button class="button-solid" aria-label="choose-option">выбрать</button>
+						</div>
+
+					</div>
+					<!-- // Package -->
+					<!-- Package -->
+					<div class="package">
+
+						<div class="package__header">
+							<h4 class="package__title">премиум</h4>
+							<span class="package__price">125</span>
+							<span class="package__period">$/мес</span>
+						</div>
+
+						<ul class="package__list">
+							<li class="package__list-item">100 проектов</li>
+							<li class="package__list-item">30 участников</li>
+							<li class="package__list-item">∞ количество задач</li>
+							<li class="package__list-item">50 GB медиа хранилище </li>
+							<li class="package__list-item">Поддержка по Email</li>
+						</ul>
+
+						<div class="package__button">
+							<button class="button-outline" aria-label="choose-option">выбрать</button>
+						</div>
+
+					</div>
+					<!-- // Package -->
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-clients" id="clients">
+		<div class="container">
+
+			<header class="section-clients__header">
+				<h2 class="section-clients__title title">наши клиенты</h2>
+				<h3 class="subtitle">Что говорят пользователи</h3>
+			</header>
+
+			<div class="section-clients__slider">
+
+				<button class="slider__arrow slider__arrow--left" id="sliderPrev" aria-label="slide to left">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g class="slider__arrow-svg">
+							<path d="M20 12H4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M10 18L4 12L10 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</g>
+					</svg>
+				</button>
+
+				<button class="slider__arrow slider__arrow--right" id="sliderNext" aria-label="slide to right">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g class="slider__arrow-svg">
+							<path d="M4 12H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M14 6L20 12L14 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</g>
+					</svg>
+				</button>
+
+				<!-- Слайдер -->
+				<div class="slider owl-carousel owl-theme" id="clients-slider">
+
+					<!-- slider item-->
+					<div class="slider-item">
+
+						<div class="slider-item__text">
+							<p>Это потрясающее приложение которое помогло мне завершить все мои дела, и сделать дипломный
+								проект
+								раньше срока.</p>
+						</div>
+						<div class="slider-item__author">
+							<div class="slider-item__avatar">
+								<img src="./img/users/user-01.jpg" alt="Avatar" width="80" height="80">
+							</div>
+							<div class="slider-item__avatar-desc">
+								<span class="slider-item__avatar-tile">Фрилансер</span>
+								<span class="slider-item__avatar-name">Николай Остапов</span>
+							</div>
+						</div>
+					</div>
+					<!-- // slider item-->
+
+					<!-- slider item-->
+					<div class="slider-item">
+
+						<div class="slider-item__text">
+							<p>Это потрясающее приложение которое помогло мне завершить все мои дела, и сделать дипломный
+								проект
+								раньше срока.</p>
+						</div>
+						<div class="slider-item__author">
+							<div class="slider-item__avatar">
+								<img src="./img/users/user-01.jpg" alt="Avatar" width="80" height="80">
+							</div>
+							<div class="slider-item__avatar-desc">
+								<span class="slider-item__avatar-tile">Фрилансер</span>
+								<span class="slider-item__avatar-name">Николай Остапов</span>
+							</div>
+						</div>
+					</div>
+					<!-- // slider item-->
+
+					<!-- slider item-->
+					<div class="slider-item">
+
+						<div class="slider-item__text">
+							<p>Это потрясающее приложение которое помогло мне завершить все мои дела, и сделать дипломный
+								проект
+								раньше срока.</p>
+						</div>
+						<div class="slider-item__author">
+							<div class="slider-item__avatar">
+								<img src="./img/users/user-01.jpg" alt="Avatar" width="80" height="80">
+							</div>
+							<div class="slider-item__avatar-desc">
+								<span class="slider-item__avatar-tile">Фрилансер</span>
+								<span class="slider-item__avatar-name">Николай Остапов</span>
+							</div>
+						</div>
+					</div>
+					<!-- // slider item-->
+
+					<!-- slider item-->
+					<div class="slider-item">
+
+						<div class="slider-item__text">
+							<p>Это потрясающее приложение которое помогло мне завершить все мои дела, и сделать дипломный
+								проект
+								раньше срока.</p>
+						</div>
+						<div class="slider-item__author">
+							<div class="slider-item__avatar">
+								<img src="./img/users/user-01.jpg" alt="Avatar" width="80" height="80">
+							</div>
+							<div class="slider-item__avatar-desc">
+								<span class="slider-item__avatar-tile">Фрилансер</span>
+								<span class="slider-item__avatar-name">Николай Остапов</span>
+							</div>
+						</div>
+					</div>
+					<!-- // slider item-->
+
+					<!-- slider item-->
+					<div class="slider-item">
+
+						<div class="slider-item__text">
+							<p>Это потрясающее приложение которое помогло мне завершить все мои дела, и сделать дипломный
+								проект
+								раньше срока.</p>
+						</div>
+						<div class="slider-item__author">
+							<div class="slider-item__avatar">
+								<img src="./img/users/user-01.jpg" alt="Avatar" width="80" height="80">
+							</div>
+							<div class="slider-item__avatar-desc">
+								<span class="slider-item__avatar-tile">Фрилансер</span>
+								<span class="slider-item__avatar-name">Николай Остапов</span>
+							</div>
+						</div>
+					</div>
+					<!-- // slider item-->
+
+				</div>
+				<!-- // Слайдер -->
+
+			</div>
+
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container">
+
+			<div class="footer__row">
+				<nav class="footer__nav">
+					<a class="footer_nav-item" href="#!">о нас</a>
+					<a class="footer_nav-item" href="#!">блог</a>
+					<a class="footer_nav-item" href="#!">контакты</a>
+				</nav>
+				<div class="footer__socials">
+					<a class="footer__socials-item" href="#!"><img src="./img/social/twitter.svg" width="24" height="24"
+							alt="twitter"></a>
+					<a class="footer__socials-item" href="#!"><img src="./img/social/facebook.svg" width="24" height="24"
+							alt="facebook"></a>
+					<a class="footer__socials-item" href="#!"><img src="./img/social/insta.svg" width="24" height="24"
+							alt="instagram"></a>
+					<a class="footer__socials-item" href="#!"><img src="./img/social/vk.svg" width="24" height="24"
+							alt="vk"></a>
+				</div>
+			</div>
+
+			<div class="footer__copyright">
+				<p>Копирайт &#169; 2019 <span>ЮНИТ</span>. Все права защищены.</p>
+			</div>
+
+		</div>
+	</footer>
+
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="./css/main.css">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="./libs/owl-carousel/assets/owl.carousel.min.css">
+
+	<script>
+		(function () {
+			function getScript(url, success) {
+				var script = document.createElement('script');
+				script.src = url;
+				var head = document.getElementsByTagName('head')[0], done = false;
+				script.onload = script.onreadystatechange = function () {
+					if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+						done = true;
+						success();
+						script.onload = script.onreadystatechange = null;
+						head.removeChild(script);
+					}
+				}
+				head.appendChild(script);
+			} //getScript
+
+			let scrollFlag = true;
+			window.addEventListener('scroll', function () {
+				// Расположение искомого элемента на странице
+				const clientsSection = document.querySelector('#clients');
+				function getCoords(elem) {
+					let box = elem.getBoundingClientRect();
+					return {
+						top: box.top + pageYOffset,
+						left: box.left + pageXOffset
+					};
+				}
+				const coords = getCoords(clientsSection);
+
+				// Скроллинг страницы до элемента, нижняя граница окна
+				let scrolledTo = pageYOffset + document.documentElement.clientHeight;
+
+				// Когда доскролили до нужного элемента
+				if (scrolledTo >= coords.top && scrollFlag) {
+					scrollFlag = false;
+					getScript('./libs/jquery-3.6.3.min.js', function () {
+						getScript('./libs/owl-carousel/owl.carousel.min.js', function () {
+							getScript('./js/carousel.js', () => { });
+						})
+					});
+				}
+
+			});
+		})();
+	</script>
+
+	<!-- Owl Carousel / libs -->
+	<!-- <script src="./libs/jquery-3.6.3.min.js"></script>
+	<script src="./libs/owl-carousel/owl.carousel.min.js"></script> -->
+
+	<!-- Custom JS -->
+	<script src="./js/nav-and-search.js"></script>
+	<!-- <script src="./js/carousel.js"></script> -->
+
+</body>
+
+</html>
